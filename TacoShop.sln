@@ -9,9 +9,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TacoShop.Data", "TacoShop.D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TacoShop.Logic", "TacoShop.Logic\TacoShop.Logic.csproj", "{5D2A401B-3DC7-4737-8DC6-F9884AC1BCBC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FrontShop.Web", "FrontShop\FrontShop.Web.csproj", "{7BD18F5B-3010-48BE-B6F4-B9B24C31D15F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FrontShop.Web", "FrontShop\FrontShop.Web.csproj", "{7BD18F5B-3010-48BE-B6F4-B9B24C31D15F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TacoShop.Web", "WebApplication1\TacoShop.Web.csproj", "{9D61C101-20A6-40CE-AD89-08CC4653A51D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TacoShop.Web", "WebApplication1\TacoShop.Web.csproj", "{9D61C101-20A6-40CE-AD89-08CC4653A51D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{4087F483-ACFB-4037-8973-04A26A6E221E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
