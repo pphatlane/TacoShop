@@ -29,7 +29,7 @@ namespace WebApplication1
                 .AllowAnyHeader()
                 .AllowAnyMethod();
             }));
-
+            services.AddMvc();
             services.AddScoped<IBuyService, BuyService>();
             services.AddScoped<IBuyRepository, BuyRepository>();
             services.AddControllers();
@@ -51,8 +51,11 @@ namespace WebApplication1
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllers();
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Shop}/{action=shop}");
             });
         }
+
     }
 }

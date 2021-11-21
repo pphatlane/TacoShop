@@ -10,7 +10,7 @@ namespace FrontShop.Web.Controllers
 {
     [Route("[controller]")]
     [ApiController]
-    public class TacoShopController : ControllerBase
+    public class TacoShopController : Controller
     {
         private readonly IBuyService _buyService;
        public TacoShopController(IBuyService buyService)
@@ -19,11 +19,16 @@ namespace FrontShop.Web.Controllers
         }
 
         [HttpGet("SearchForMenu")]
-        public async Task<ActionResult<IEnumerable<TacoRestaurant>>> SearchForMenu()
+        public async Task<ActionResult<IEnumerable<TacoRestaurant>>> SearchForMenu(string searchString)
         {
-            var tacoMenu = await _buyService.GetAllAvailableSortedSearchedMenu();
-            return Ok(tacoMenu);
+            var tacoMenu = await _buyService.GetAllAvailableSortedSearchedMenu(searchString);
+            return View(tacoMenu);
         }
 
+        [HttpPost("PlaceOrder")]
+        public ActionResult PlaceOrder()
+        {
+            return View();
+        }
     }
 }

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<TacoShop.Domain.Model.TacoRestaurant>
+
+    @using (Html.BeginForm("PlaceOrder", "TacoShop", FormMethod.Get))
+    {
+        @if (Model != null)
+        {
+
+            foreach (var item in Model)
+            {
+                <img src="@Url.Content(item.LogoPath)" alt="IMAGES" />
+                @Html.LabelFor(Model => item.Name, item.Name) @Html.LabelFor(m => item.Suburb, " - " + item.Suburb) @Html.LabelFor(m => item.Rank, " ranked #" + item.Rank + " overall")
+                <br />
+                foreach (var items in item.Categories)
+                {
+                    foreach (var menuItems in items.MenuItems)
+                    {
+
+                        @Html.CheckBoxFor(m => menuItems.Checked, new { @onclick = "clicked()" })
+                        @Html.HiddenFor(m => menuItems.Id)
+                        @Html.LabelFor(m => menuItems.name, menuItems.name) @Html.LabelFor(m => menuItems.Price, " - R" + menuItems.Price.ToString())
+                        <br />
+                    }
+                    <br />
+                }
+                <br />
+
+            }
+            <p>
+                <input type="submit" value="Order" />
+            </p>
+        }
+    }
+
+
+}

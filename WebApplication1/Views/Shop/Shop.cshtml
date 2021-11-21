@@ -1,0 +1,10 @@
+﻿@model TacoShop.Domain.Model.TacoRestaurant;
+
+@using (Html.BeginForm("SearchForMenu", "TacoShop", FormMethod.Get))
+{
+    <p>
+        @Html.TextBox("SearchString", ViewBag.CurrentFilter as string, new { style = "width:50%" })
+        <input type="submit" value="Search" />
+    </p>
+}
+

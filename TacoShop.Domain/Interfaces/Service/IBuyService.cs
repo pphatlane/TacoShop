@@ -8,6 +8,6 @@ namespace TacoShop.Domain.Interfaces.Service
 {
     public interface IBuyService
     {
-        Task<IEnumerable<TacoRestaurant>> GetAllAvailableSortedSearchedMenu();
+        Task<IEnumerable<TacoRestaurant>> GetAllAvailableSortedSearchedMenu(string searchString);
     }
 }
